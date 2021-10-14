@@ -1,12 +1,19 @@
+// import React, { Component } from 'react' ;
 import './App.css';
 
-const = App () => {
+const App = () => {
   return (
-    <div className="App">
-      <ul>
-			<li>rere</li>
-		</ul>
-    </div>
+	<div> 
+		<div>one div</div>
+		<div className="App">
+			<ul>
+				<li>html</li>
+				<li>css</li>
+				<li>js</li>
+				<li>react</li>
+			</ul>
+		</div>
+	</div>
   );
 }
 
