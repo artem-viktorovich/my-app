@@ -1,0 +1,12 @@
+
+.nav{
+	grid-area: n;
+	background-color: rgb(5, 42, 146);
+	}
+	.nav a{
+		color: #fff;
+	}
+	
+	.menu__body{
+		padding: 10px 0px 0px 10px;
+	}
