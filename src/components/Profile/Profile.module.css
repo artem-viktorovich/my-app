@@ -1,6 +1,6 @@
 .content{
 	grid-area: c;
-	background-color: rgb(29, 22, 2);
+	background-color: #ECE89D;
 
 }
 .net img{
@@ -20,7 +20,7 @@
 }
 .content__net{
 	flex-direction: column;
-	color: #fff;
+	color: rgb(0, 0, 0);
 	margin-top: 13px;
 }
 .content__name{

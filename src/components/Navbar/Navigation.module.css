@@ -1,0 +1,19 @@
+
+.nav{
+	grid-area: n;
+	background-color: #5E5373;
+	}
+	.menu__link{
+		color: #fff;
+		font-size: 20px;
+	}
+	
+	.menu__body{
+		padding: 10px 0px 0px 10px;
+	}
+	.menu__list li{
+		padding: 3px 0px;
+	}
+	.menu__list li:last-child{
+		margin-top: 20px;
+	}

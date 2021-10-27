@@ -1,17 +1,19 @@
-import './Profile.css';
+import MyPosts from './MyPosts/MyPosts';
+import p from './Profile.module.css';
 
 const Profile = () => {
 	return (
-		<section className='content'>
-			<div className='net'>
+
+		<section className={p.content}>
+			<div className={p.net}>
 				<img src="https://avatars.mds.yandex.net/i?id=2a0000017a03e78461368fd99be737a2bf6e-4034422-images-thumbs&n=13" alt="" />
 			</div>
-			<div className='info__content_name'>
-				<div className='info__img'>
+			<div className={p.info__content_name}>
+				<div className={p.info__img}>
 					<img src="http://s4.fotokto.ru/photo/full/413/4135525.jpg" alt="girl" />
 				</div>
-				<div className='content__net'>
-					<p className='content__name'>Vasechko A.</p>
+				<div className={p.content__net}>
+					<p className={p.content__name}>Vasechko A.</p>
 					<ul className='content__list'>
 						<li>Date of Birth: 2 january</li>
 						<li>City: Minsk</li>
@@ -19,20 +21,10 @@ const Profile = () => {
 						<li>Web Site: https://vasechko.pp.ua</li>
 					</ul>
 				</div>
-
-
 			</div>
-			<div className='posts'>
-				<div className='new_posts'>
-					новый пост
-				</div>
-				<div>
-					post 1
-				</div>
-				<div>
-					post 2
-				</div>
-			</div>
+
+			<MyPosts />
+
 		</section>
 	)
 }
