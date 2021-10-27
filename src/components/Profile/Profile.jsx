@@ -4,7 +4,7 @@ import p from './Profile.module.css';
 const Profile = () => {
 	return (
 
-		<section className={p.content}>
+		<section>
 			<div className={p.net}>
 				<img src="https://avatars.mds.yandex.net/i?id=2a0000017a03e78461368fd99be737a2bf6e-4034422-images-thumbs&n=13" alt="" />
 			</div>

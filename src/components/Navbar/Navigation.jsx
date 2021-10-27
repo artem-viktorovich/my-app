@@ -10,11 +10,11 @@ const Navigation = () => {
 			<div className = "header__menu menu">
 				<nav className = {a.menu__body}>
 					<ul className = {a.menu__list}>
-						<li className = "menu__item"><a href="#" className = {a.menu__link}>Profile</a></li>
-						<li className = "menu__item"><a href="#" className = {a.menu__link}>Messages</a></li>
-						<li className = "menu__item"><a href="#" className = {a.menu__link}>News</a></li>
-						<li className = "menu__item"><a href="#" className = {a.menu__link}>Music</a></li>
-						<li className = "menu__item"><a href="#" className = {a.menu__link}>Settings</a></li>
+						<li className = "menu__item"><a href="#" className = {a.menu__link}>Профиль</a></li>
+						<li className = "menu__item"><a href="#" className = {a.menu__link}>Мессенджер</a></li>
+						<li className = "menu__item"><a href="#" className = {a.menu__link}>Новости</a></li>
+						<li className = "menu__item"><a href="#" className = {a.menu__link}>Музыка</a></li>
+						<li className = "menu__item"><a href="#" className = {a.menu__link}>Настройки</a></li>
 					</ul>
 				</nav>
 			</div>
