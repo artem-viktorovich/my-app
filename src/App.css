@@ -113,5 +113,6 @@ body.lock {
 .app-wrapper-content{
 	grid-area: c;
 	background-color: #ECE89D;
+	padding: 10px;
 
 }

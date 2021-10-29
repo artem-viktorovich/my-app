@@ -1,6 +1,6 @@
 //import React from 'react' ;
 import './App.css';
-import Dialogs from './components/Dialogs/Dialogs';
+import Dialogs from './components/Dialogs/Dialogs.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import Header from './components/Header/Header.jsx';
 import Navigation from './components/Navbar/Navigation.jsx';
@@ -16,11 +16,11 @@ const App = () => {
 				<Header />
 				<Navigation />
 				<section className='app-wrapper-content'>
-						<Route path='/Profile' component={Profile}/>	
-						<Route path='/Dialogs' component={Dialogs}/>
-						<Route path='/Dialogs' component={News}/>
-						<Route path='/Dialogs' component={Music}/>
-						<Route path='/Dialogs' component={Settings}/>
+						<Route path='/Profile' component = {Profile} />	
+						<Route path='/Dialogs' component = {Dialogs} />
+						<Route path='/News' component = {News} />
+						<Route path='/Music' component = {Music} />
+						<Route path='/Settings' component = {Settings} />
 				</section>
 
 				
