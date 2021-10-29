@@ -10,7 +10,7 @@ const Profile = () => {
 			</div>
 			<div className={p.info__content_name}>
 				<div className={p.info__img}>
-					<img src="http://s4.fotokto.ru/photo/full/413/4135525.jpg" alt="girl" />
+					<img src="https://ya62.ru/upload/resize_cache/iblock/fb5/660_465_2/fb5a76206b1d30ecb41f952ecde0c54a.jpg" alt="avatar" />
 				</div>
 				<div className={p.content__net}>
 					<p className={p.content__name}>Vasechko A.</p>
