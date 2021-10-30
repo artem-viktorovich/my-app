@@ -1,5 +1,16 @@
 .Dialogs{
 	font-size: 14px;
+	padding: 10px;
+
+}
+.Dialogs_body{
+	display: grid;
+	grid-template-columns: 2fr 10fr;
+}
+h1{
+	font-size: 20px;
+	line-height: 20px;
+	margin-bottom: 5px;
 }
 .Dialogs__list{
 
