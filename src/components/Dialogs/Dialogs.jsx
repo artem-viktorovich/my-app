@@ -1,4 +1,8 @@
+import DialogItem from './Dialog/Dialog.jsx';
+import Message from './Message/Message';
 import D_s from './Dialogs.module.css';
+
+
 
 const Dialogs = () => {
 	return (
@@ -6,29 +10,18 @@ const Dialogs = () => {
 			  <h1>Сообщения</h1>
 			  <div className={D_s.Dialogs_body}>
 				<div className={D_s.Dialogs__list}>
-						<div className={D_s.Dialog}>
-							Maks
-						</div>
-						<div className={D_s.Dialog}>
-							Anton
-						</div>
-						<div className={D_s.Dialog}>
-							Dima
-						</div>
-						<div className={D_s.Dialog}>
-							Artem
-						</div>
+						<DialogItem name='Andrey'  id='1'/>
+						<DialogItem name='Anton'  id='2'/>
+						<DialogItem name='Dima'  id='3'/>
+						<DialogItem name='Artem'  id='4'/>
+						<DialogItem name='Artur'  id='5'/>
 				</div>
 				<div className={D_s.Dialogs__message}>
-					<div className={D_s.message}>
-						<p>Привет</p>
-					</div>
-					<div className={D_s.message}>
-						<p>Новый урок</p>
-					</div>
-					<div className={D_s.message}>
-						<p>Хай пипл</p>
-					</div>
+					<Message message = 'Привет' />
+					<Message message = 'Как дела?' />
+					<Message message = 'Ты кто?' />
+					<Message message = 'Пошли гулять' />
+					<Message message = 'Хай' />
 				</div>
 			  </div>
 		  </section>
