@@ -7,17 +7,16 @@
 .info__img img{
 	width: 150px;
 	height: 150px;
-	padding: 10px 10px 10px 0px;
 	display: inline-block;
 }
 .info__content_name{
 	display: flex;
-
+	padding: 10px;
 }
 .content__net{
 	flex-direction: column;
 	color: rgb(0, 0, 0);
-	margin-top: 13px;
+	margin: 13px 0px 0px 10px;
 }
 .content__name{
 	font-size: 25px;

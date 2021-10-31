@@ -1,5 +1,6 @@
 import p_t from './Post.module.css';
 
+
 const Post = (props) => {
 	return (
 		<section className={p_t.Post_body}>
