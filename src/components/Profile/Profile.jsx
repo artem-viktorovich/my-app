@@ -4,11 +4,9 @@ import P_e from './Profile.module.css';
 
 const Profile = () => {
 	return (
-
 		<section className={P_e.Profile_body}>
 			<ProfileInfo />
 			<MyPosts />
-
 		</section>
 	)
 }
