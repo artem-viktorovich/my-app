@@ -4,10 +4,11 @@ import Post from './Posts/Post';
 
 const MyPosts = () => {
 	let posts = [
-		{ id: 1, message: 'Привет бейби', LikesCount: 11 },
-		{ id: 2, message: 'Здоров', LikesCount: 23 }
+		{ id: 1, message: 'Привет бейби'},
+		{ id: 2, message: 'Здоров' }
 	]
-	let postElements = posts.map(p => <Post message={p.message} LikesCount={p.LikesCount} />);
+	let postElements = posts.map(p => <Post message={p.message}  />); 
+	//  LikesCount={p.LikesCount}
 
 	return (
 		<div className={Mp.MyPosts}>

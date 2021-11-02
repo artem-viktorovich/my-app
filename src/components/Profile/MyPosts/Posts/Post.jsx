@@ -8,7 +8,7 @@ const Post = (props) => {
 				<img src="https://avatars.mds.yandex.net/i?id=026ff47b49d6475b8540af980292e791-5257871-images-thumbs&n=13" alt="avatar_user" />
 				
 				<p className={p_t.title}>{props.message}</p>
-				<span>Like</span>
+				<span>Like</span> 
 			</div>
 		</section>
 
