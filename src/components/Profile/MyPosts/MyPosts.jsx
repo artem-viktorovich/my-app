@@ -2,13 +2,10 @@ import Mp from './MyPosts.module.css';
 import Post from './Posts/Post';
 
 
-const MyPosts = () => {
-	let posts = [
-		{ id: 1, message: 'Привет бейби'},
-		{ id: 2, message: 'Здоров' }
-	]
-	let postElements = posts.map(p => <Post message={p.message}  />); 
-	//  LikesCount={p.LikesCount}
+const MyPosts = (props) => {
+
+	let postElements = props.posts.map(p => <Post message={p.message}  LikesCount={p.LikesCount}/>); 
+	//  
 
 	return (
 		<div className={Mp.MyPosts}>

@@ -22,8 +22,6 @@ const App = () => {
 						<Route path='/Music'  render = { () => <Music />}/> 
 						<Route path='/Settings' render = { () => <Settings/>}/>
 				</section>
-
-				
 			</div>
 	  </BrowserRouter>
 	
