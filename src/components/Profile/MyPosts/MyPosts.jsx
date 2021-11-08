@@ -2,17 +2,18 @@ import React from 'react';
 import Mp from './MyPosts.module.css';
 import Post from './Posts/Post';
 
-let newPostElement = React.createRef(); //создание ссылки для работы
 
-let addPost = () => {
-	let text = newPostElement.current.value;
-	alert(text);
-}
 
 const MyPosts = (props) => {
 
 	let postElements = props.posts.map(p => <Post message={p.message} LikesCount={p.LikesCount} />);
 	//  
+	let newPostElement = React.createRef(); //создание ссылки для работы
+
+	let addPost = () => {
+		let text = newPostElement.current.value; //curent  ссылается на нативный html  элемент
+		props.addPost(text);
+	}
 
 	return (
 		<div className={Mp.MyPosts}>

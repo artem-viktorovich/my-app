@@ -8,6 +8,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
+import { addPost } from './redux/state';
 
 
 const App = (props) => {
@@ -20,7 +21,8 @@ const App = (props) => {
 				<section className='app-wrapper-content'>
 					<Route path='/Profile'
 						render={() => <Profile 
-							state={props.state.profilePage} />} />
+							state={props.state.profilePage}
+							addPost={props.addPost}  /> } />
 					<Route path='/Dialogs'
 						render={() => <Dialogs
 							state={props.state.dialogsPage} />} />
