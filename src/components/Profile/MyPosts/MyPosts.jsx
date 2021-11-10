@@ -10,17 +10,22 @@ const MyPosts = (props) => {
 	//  
 	let newPostElement = React.createRef(); //создание ссылки для работы
 
+
+
 	let addPost = () => {
-		let text = newPostElement.current.value; //curent  ссылается на нативный html  элемент
-		props.addPost(text);
-		newPostElement.current.value = ' '; //обнуление textarea
+		props.addPost();
+	}
+	let onPostChange = () => {
+		let text = newPostElement.current.value; //отправка поста в бизнес
+		props.updateNewPostText(text);
 	}
 
 	return (
 		<div className={Mp.MyPosts}>
 			<h2>Добавить пост</h2>
 			<div className={Mp.MyPosts_body}>
-				<textarea ref={newPostElement} placeholder='your post...'></textarea>
+				<textarea onChange = {onPostChange} ref={newPostElement} placeholder='your post...' 
+				value={props.newPostText}/>
 				<button onClick={addPost}>Пост</button>
 			</div>
 			{postElements}

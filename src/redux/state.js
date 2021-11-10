@@ -1,5 +1,6 @@
 import {rerenderEntureTree} from '../render';
 
+
 let state = {
 	profilePage : {
 		posts: [
@@ -7,7 +8,8 @@ let state = {
 			{ id: 2, message: 'Здоров', LikesCount: 21 },
 			{ id: 3, message: 'Пока', LikesCount: 21 },
 			{ id: 4, message: 'Йоу', LikesCount: 21 }
-		]
+		],
+		newPostText  : ''
 	},
 	dialogsPage : {
 		dialogs: [
@@ -27,15 +29,21 @@ let state = {
 	}
 
 }
-
-	export let addPost = (postMessage) => {
+	window.state = state;
+	export let addPost = () => {
 		let newPost = {
 			id: 5,
-			message: postMessage,
+			message: state.profilePage.newPostText,
 			LikesCount: 0
 		};
 		state.profilePage.posts.push(newPost);
+		state.profilePage.newPostText = '';
 		rerenderEntureTree(state); //запускает перерисовку BLL
+	}
+
+	export let updateNewPostText = (newText) => {
+		state.profilePage.newPostText = newText;
+		rerenderEntureTree(state);
 	}
 
 
