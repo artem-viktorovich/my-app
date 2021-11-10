@@ -1,3 +1,4 @@
+import {rerenderEntureTree} from '../render';
 
 let state = {
 	profilePage : {
@@ -34,6 +35,7 @@ let state = {
 			LikesCount: 0
 		};
 		state.profilePage.posts.push(newPost);
+		rerenderEntureTree(state); //запускает перерисовку BLL
 	}
 
 

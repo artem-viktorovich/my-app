@@ -13,6 +13,7 @@ const MyPosts = (props) => {
 	let addPost = () => {
 		let text = newPostElement.current.value; //curent  ссылается на нативный html  элемент
 		props.addPost(text);
+		newPostElement.current.value = ' '; //обнуление textarea
 	}
 
 	return (
