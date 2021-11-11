@@ -1,5 +1,22 @@
+//import * as serviceWorker from './serviceWorker';
+import state, { observer } from './redux/state';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { addPost, updateNewPostText } from './redux/state';
+import { BrowserRouter } from 'react-router-dom';
 
-import state from './redux/state';
-import {rerenderEntureTree} from './render';
+
+let rerenderEntureTree = () => {
+	ReactDOM.render(
+		<BrowserRouter>
+			<App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>
+		</BrowserRouter>,	document.getElementById('root')
+	);
+}
+
+
 
 rerenderEntureTree(state);
+observer(rerenderEntureTree); //отправляем функцию для её вызова коллбек
