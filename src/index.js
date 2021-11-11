@@ -1,5 +1,5 @@
 //import * as serviceWorker from './serviceWorker';
-import state, { observer } from './redux/state';
+import state, { subscribe } from './redux/state';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -19,4 +19,4 @@ let rerenderEntureTree = () => {
 
 
 rerenderEntureTree(state);
-observer(rerenderEntureTree); //отправляем функцию для её вызова коллбек
+subscribe(rerenderEntureTree); //отправляем функцию для её вызова коллбек

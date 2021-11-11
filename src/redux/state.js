@@ -48,8 +48,8 @@ export const updateNewPostText = (newText) => {
 }
 
 
-export const observer = (observer) => {
-	
+export const subscribe = (observer) => {
+	rerenderEntureTree = observer;
 }
 
 export default state;
