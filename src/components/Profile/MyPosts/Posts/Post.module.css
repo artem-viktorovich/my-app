@@ -4,7 +4,9 @@
 }
 .Post_item{
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+-ms-flex-direction: column;
+
 	position: relative;
 	font-family: 'Roboto' sans-serif;
 	font-size: 16px;
@@ -12,8 +14,8 @@
 }
 .Post_item span{
 	display: block;
-	position: absolute;
-	margin: 40px 0px 0px 150px;
+
+	margin: 20px 0px 0px 150px;
 }
 .Post_item img{
 	width: 40px;
@@ -21,5 +23,9 @@
 }
 
 .title{
-	padding-left: 8px;
+	padding: 8px 8px;
+}
+.Post_like{
+	display: flex;
+
 }

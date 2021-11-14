@@ -5,7 +5,7 @@ let store = {
 				{ id: 1, message: 'Привет бейби', LikesCount: 22 },
 				{ id: 2, message: 'Здоров', LikesCount: 21 },
 				{ id: 3, message: 'Пока', LikesCount: 21 },
-				{ id: 4, message: 'Йоу', LikesCount: 21 }
+				{ id: 4, message: 'Йоу', LikesCount: 21}
 			],
 			newPostText: ''
 		},
