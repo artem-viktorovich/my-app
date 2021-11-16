@@ -1,6 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
+const SEND_MESSAGE = 'SEND_MESSAGE';
 
 let store = {
 	_state: {
@@ -27,7 +28,8 @@ let store = {
 				{ id: 3, message: 'Ты кто?' },
 				{ id: 4, message: 'Пошли гулять' },
 				{ id: 5, message: 'Хай' }
-			]
+			],
+			newMesssageBody: ''
 		}
 
 	},
@@ -48,15 +50,23 @@ let store = {
 			this._state.profilePage.posts.push(newPost);
 			this._state.profilePage.newPostText = '';
 			this._callSubscriber(this._state); //запускает перерисовку BLL
-		} else if (action.type === UPDATE_NEW_POST_TEXT ) {
+		} else if (action.type === UPDATE_NEW_POST_TEXT) {
 			this._state.profilePage.newPostText = action.newText;
-			this._callSubscriber(this._state);
+			this._callSubscriber(this._state); //управление state
+		} else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+			this._state.dialogsPage.newMesssageBody = action.body;
+			this._callSubscriber(this._state); //управление state
+		} else if (action.type === SEND_MESSAGE) {
+			let body = this._state.dialogsPage.newMesssageBody;
+			this._state.dialogsPage.newMesssageBody = ''; //зануление поля набора текста
+			this._state.dialogsPage.messages.push({ id: 6, message: body });
+			this._callSubscriber(this._state); //управление state
 		}
 
 	},
 
 
-subscribe(observer) {
+	subscribe(observer) {
 		this._callSubscriber = observer;
 	}
 }
@@ -66,9 +76,20 @@ export const addPostActionCreator = () => {
 	}
 }
 
-export const updateNewPostTextAction = (text) => {
+export const updateNewPostTextActionCreator = (text) => {
 	return {
-		type: UPDATE_NEW_POST_TEXT , newText: text
+		type: UPDATE_NEW_POST_TEXT, newText: text
+	}
+}
+export const updateNewMessageBodyCreator = (text) => {
+	return {
+		type: UPDATE_NEW_MESSAGE_BODY, newText: text
+	}
+}
+
+export const sendMessageCreator = () => {
+	return {
+		type: SEND_MESSAGE
 	}
 }
 export default store;
