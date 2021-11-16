@@ -13,15 +13,12 @@
 	padding: 10px 0px;
 }
 .Post_item span{
-	display: block;
-
-	margin: 20px 0px 0px 150px;
+	display: inline-block;
 }
 .Post_item img{
 	width: 40px;
 	border-radius: 50%;
 }
-
 .title{
 	padding: 8px 8px;
 }
