@@ -70,26 +70,17 @@ let store = {
 		this._callSubscriber = observer;
 	}
 }
-export const addPostActionCreator = () => {
-	return {
-		type: ADD_POST
-	}
-}
+export const addPostActionCreator = () =>
+	({ type: ADD_POST })
 
-export const updateNewPostTextActionCreator = (text) => {
-	return {
-		type: UPDATE_NEW_POST_TEXT, newText: text
-	}
-}
-export const updateNewMessageBodyCreator = (text) => {
-	return {
-		type: UPDATE_NEW_MESSAGE_BODY, newText: text
-	}
-}
+export const updateNewPostTextActionCreator = (text) =>
+	({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
-export const sendMessageCreator = () => {
-	return {
-		type: SEND_MESSAGE
-	}
-}
+export const updateNewMessageBodyCreator = (body) =>
+	({ type: UPDATE_NEW_MESSAGE_BODY, body: body })
+	
+export const sendMessageCreator = () =>
+	({ type: SEND_MESSAGE })
+
 export default store;
+window.store = store;

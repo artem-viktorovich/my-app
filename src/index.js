@@ -10,7 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 let rerenderEntureTree = (state) => {
 	ReactDOM.render(
 		<BrowserRouter>
-			<App state={state} dispath={store.dispath.bind(store)} 	/>
+			<App state={state} dispath={store.dispath.bind(store)} store={store}	/>
 		</BrowserRouter>,	document.getElementById('root')
 	);
 }
