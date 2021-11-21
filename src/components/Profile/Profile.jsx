@@ -8,8 +8,11 @@ const Profile = (props) => {
 	return (
 		<section className={P_e.Profile_body}>
 			<ProfileInfo />
+		
 			<MyPosts posts={props.profilePage.posts}
+			
 				newPostText={props.profilePage.newPostText}
+				
 				dispath={props.dispath}
 
 			/>

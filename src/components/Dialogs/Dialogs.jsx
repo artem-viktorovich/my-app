@@ -10,7 +10,7 @@ import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/sta
 
 const Dialogs = (props) => {
 
-	let state = props.store.getStare().dialogsPage;
+	let state = props.store.getState().dialogsPage;
 
 	let dialogsElements = state.dialogs.map(dialogs => <DialogItem name={dialogs.name} id={dialogs.id} />);
 	let messagesElements = state.messages.map(messages => <Message message={messages.message} />);
@@ -34,10 +34,10 @@ const Dialogs = (props) => {
 				<div className={D_s.Dialogs__messages_body}>
 					<div className={D_s.Dialogs__messages_text}>{messagesElements}</div>
 					<div className={D_s.Sending_sms}>
-						<div className={D_s.typing}><textarea
-							onChange={onNewMessageChange}
-							value={newMessageBody}
-							placeholder='Send you message...' /></div>
+						<div className={D_s.typing}>
+							<textarea onChange={onNewMessageChange}
+								value={newMessageBody}
+								placeholder='Send you message...' /></div>
 						<div><button onClick={onSendMessageClick}>Send</button></div>
 					</div>
 				</div>

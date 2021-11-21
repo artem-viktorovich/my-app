@@ -21,6 +21,7 @@ const MyPosts = (props) => {
 	let onPostChange = () => {
 		let text = newPostElement.current.value; //отправка поста в бизнес
 		let action = updateNewPostTextActionCreator(text);
+		debugger;
 		props.dispath(action);
 	}
 

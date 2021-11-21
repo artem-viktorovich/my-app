@@ -21,6 +21,16 @@ h1{
 .Dialogs__messages_body{
 
 }
+.Sending_sms button{
+	padding: 10px 40px;
+}
+.typing{
+	margin: 10px 0px;
+}
+.typing textarea{
+	padding: 10px;
+	resize: none;
+}
 .Dialogs__messages .message{
 
 }
