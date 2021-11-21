@@ -29,9 +29,11 @@ let store = {
 				{ id: 4, message: 'Пошли гулять' },
 				{ id: 5, message: 'Хай' }
 			],
-			newMesssageBody: ''
-		}
+			newMesssageBody: 'drgdrgdr'
+		},
+		sidebar: { 
 
+		}
 	},
 	_callSubscriber() {
 		console.log('Kazah');
@@ -40,7 +42,7 @@ let store = {
 		return this._state;
 	},
 
-	dispath(action) {
+	dispatch(action) {
 		if (action.type === ADD_POST) {
 			let newPost = {
 				id: 5,
@@ -49,17 +51,19 @@ let store = {
 			};
 			this._state.profilePage.posts.push(newPost);
 			this._state.profilePage.newPostText = '';
-			this._callSubscriber(this._state); //запускает перерисовку BLL
+			this._callSubscriber(this._state); //уведомление об изменениях,запускает перерисовку BLL
 		} else if (action.type === UPDATE_NEW_POST_TEXT) {
 			this._state.profilePage.newPostText = action.newText;
+			this._callSubscriber(this._state); //уведомление об изменениях,запускает перерисовку BLL
+		} else if (action.type === SEND_MESSAGE) {
+			let body = this._state.dialogsPage.newMesssageBody;
+
+			
+			this._state.dialogsPage.messages.push({ id: 6, message: body });
+			this._state.dialogsPage.newMesssageBody = ''; //зануление поля набора текста
 			this._callSubscriber(this._state); //управление state
 		} else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
 			this._state.dialogsPage.newMesssageBody = action.body;
-			this._callSubscriber(this._state); //управление state
-		} else if (action.type === SEND_MESSAGE) {
-			let body = this._state.dialogsPage.newMesssageBody;
-			this._state.dialogsPage.newMesssageBody = ''; //зануление поля набора текста
-			this._state.dialogsPage.messages.push({ id: 6, message: body });
 			this._callSubscriber(this._state); //управление state
 		}
 
@@ -76,11 +80,13 @@ export const addPostActionCreator = () =>
 export const updateNewPostTextActionCreator = (text) =>
 	({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
-export const updateNewMessageBodyCreator = (body) =>
-	({ type: UPDATE_NEW_MESSAGE_BODY, body: body })
-	
 export const sendMessageCreator = () =>
 	({ type: SEND_MESSAGE })
+
+export const updateNewMessageBodyCreator = (body) =>
+	({ type: UPDATE_NEW_MESSAGE_BODY, body: body })
+
+
 
 export default store;
 window.store = store;
