@@ -21,7 +21,7 @@ const App = (props) => {
 				<Route path='/Profile'
 					render={() => <Profile
 						profilePage={props.state.profilePage} //profilePage вместо state
-						dispath={props.dispath} />} />
+						dispatch={props.dispatch} />} />
 				<Route path='/Dialogs'
 					render={() => <Dialogs
 						store={props.store} />} />

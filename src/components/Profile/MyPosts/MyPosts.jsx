@@ -15,14 +15,13 @@ const MyPosts = (props) => {
 
 
 	let addPost = () => {
-		props.dispath(addPostActionCreator());
+		props.dispatch(addPostActionCreator());
 	}
 
 	let onPostChange = () => {
 		let text = newPostElement.current.value; //отправка поста в бизнес
 		let action = updateNewPostTextActionCreator(text);
-		debugger;
-		props.dispath(action);
+		props.dispatch(action);
 	}
 
 	return (

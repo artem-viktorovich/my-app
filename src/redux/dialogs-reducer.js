@@ -9,6 +9,7 @@ const dialogsReducer = (state, action) => {
 		state.newMesssageBody = '';
 	} else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
 		state.newMesssageBody = action.body;
+
 	}
 	return state;
 }

@@ -13,7 +13,7 @@ const Profile = (props) => {
 			
 				newPostText={props.profilePage.newPostText}
 				
-				dispath={props.dispath}
+				dispatch={props.dispatch}
 
 			/>
 		</section>
