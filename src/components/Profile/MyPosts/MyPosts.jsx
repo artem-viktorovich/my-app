@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/store';
 import Mp from './MyPosts.module.css';
 import Post from './Posts/Post';
 
@@ -21,7 +21,7 @@ const MyPosts = (props) => {
 	let onPostChange = () => {
 		let text = newPostElement.current.value; //отправка поста в бизнес
 		let action = updateNewPostTextActionCreator(text);
-		props.dispatch(action);
+		props.dispatch(action); 
 	}
 
 	return (
