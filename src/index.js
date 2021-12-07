@@ -18,4 +18,7 @@ let rerenderEntureTree = (state) => {
 
 
 rerenderEntureTree(store.getState());
-store.subscribe(rerenderEntureTree); //отправляем функцию для её вызова коллбек
+store.subscribe( () => {
+	let state = store.getState(); //отдаем state в ререндер
+	rerenderEntureTree(state);
+}); //отправляем функцию для её вызова коллбек
