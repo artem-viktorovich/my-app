@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/store';
+import { addPostActionCreator} from '../../../redux/store';
 import Mp from './MyPosts.module.css';
 import Post from './Posts/Post';
 
@@ -14,14 +14,14 @@ const MyPosts = (props) => {
 	
 
 
-	let addPost = () => {
-		props.dispatch(addPostActionCreator());
+	let onAddPost = () => {
+		props.addPost();
 	}
 
 	let onPostChange = () => {
 		let text = newPostElement.current.value; //отправка поста в бизнес
-		let action = updateNewPostTextActionCreator(text);
-		props.dispatch(action); 
+		props.updateNewPostText(text); //вызываем текст и он попадает в компоненту в MyPostsContainer в метод onPostChange
+
 	}
 
 	return (
@@ -30,7 +30,7 @@ const MyPosts = (props) => {
 			<div className={Mp.MyPosts_body}>
 				<textarea onChange={onPostChange} ref={newPostElement} placeholder='your post...'
 					value={props.newPostText} />
-				<button onClick={addPost}>Пост</button>
+				<button onClick={onAddPost}>Пост</button>
 			</div>
 			{postElements}
 		</div>
