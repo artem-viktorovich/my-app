@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPostActionCreator} from '../../../redux/store';
+import { addPostActionCreator } from '../../../redux/store';
 import Mp from './MyPosts.module.css';
 import Post from './Posts/Post';
 
@@ -11,7 +11,7 @@ const MyPosts = (props) => {
 
 	let newPostElement = React.createRef(); //создание ссылки для работы
 
-	
+
 
 
 	let onAddPost = () => {

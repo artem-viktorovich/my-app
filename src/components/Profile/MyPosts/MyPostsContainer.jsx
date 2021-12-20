@@ -1,29 +1,28 @@
 import React from 'react';
 import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/store';
 import MyPosts from './MyPosts';
-import Post from './Posts/Post';
+
 
 
 
 const MyPostsContainer = (props) => {
 
-	let postElements = props.posts.map(p => <Post message={p.message} LikesCount={p.LikesCount} />);
-
-	let newPostElement = React.createRef(); //создание ссылки для работы
-
-	
-
+	let state = props.store.getState();
 
 	let addPost = () => {
-		props.dispatch(addPostActionCreator());
+		props.store.dispatch(addPostActionCreator());
 	}
 
 	let onPostChange = (text) => {
 		let action = updateNewPostTextActionCreator(text);
-		props.dispatch(action); 
+		props.store.dispatch(action); 
 	}
 
-	return (	<MyPosts updateNewPostText={onPostChange}	addPost={addPost})
+	return (	<MyPosts updateNewPostText={onPostChange}	
+		addPost={addPost} 
+		posts={state.profilePage.posts}
+		newPostText = {state.profilePage.newPostText}
+		/>)
 }
 
 export default MyPostsContainer;
