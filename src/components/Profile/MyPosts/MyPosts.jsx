@@ -1,5 +1,4 @@
 import React from 'react';
-import { addPostActionCreator } from '../../../redux/store';
 import Mp from './MyPosts.module.css';
 import Post from './Posts/Post';
 
@@ -21,6 +20,7 @@ const MyPosts = (props) => {
 	let onPostChange = () => {
 		let text = newPostElement.current.value; //отправка поста в бизнес
 		props.updateNewPostText(text); //вызываем текст и он попадает в компоненту в MyPostsContainer в метод onPostChange
+
 
 	}
 
