@@ -11,7 +11,7 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 // import { addPost } from './redux/state';
 
 
-const App = (props) => {
+const App = () => {
 
 	return (
 		<div className='app-wrapper'>
