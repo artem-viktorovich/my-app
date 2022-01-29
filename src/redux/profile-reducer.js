@@ -14,16 +14,31 @@ let initialState = {
 
 export const profileReducer = (state = initialState, action) => {
 
-	if (action.type === ADD_POST) {
-		let newPost = {
-			id: 5,
-			message: state.newPostText,
-			LikesCount: 0
-		};
-		state.posts.push(newPost);
-		state.newPostText = '';
-	} else if (action.type === UPDATE_NEW_POST_TEXT) {
-		state.newPostText = action.newText;
+	switch (action.type) {
+		case ADD_POST: {
+			let newPost = {
+				id: 5,
+				message: state.newPostText,
+				LikesCount: 0
+			};
+			let stateCopy = [...state];
+			stateCopy.posts = [...state.posts]; //копирование и вызов постов в стайте
+			stateCopy.posts.push(newPost); //jтправляем пост
+			stateCopy.newPostText = '';
+			return stateCopy;
+		}
+		case UPDATE_NEW_POST_TEXT: {
+			let stateCopy = { ...state };
+			stateCopy.newPostText = action.newText;
+			return stateCopy;
+		}
+		default:
+			return state;
 	}
-	return state;
-};
+}
+
+export const sendMessageCreator = () => ({ type: ADD_POST })
+export const updateNewMessageBodyCreator = (text) =>
+	({ type: UPDATE_NEW_POST_TEXT, newText: text })
+
+export default profileReducer;

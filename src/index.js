@@ -9,21 +9,14 @@ import { Provider } from 'react-redux';
 //import StoreContext from './StoreContext';
 
 
-let rerenderEntureTree = (state) => {
-	ReactDOM.render(
-		<BrowserRouter>
-			<Provider store={store}>
-				<App />
-			</Provider>
+ReactDOM.render(
+	<BrowserRouter>
+		<Provider store={store}>
+			<App />
+		</Provider>
 
-		</BrowserRouter>, document.getElementById('root')
-	);
-}
-
+	</BrowserRouter>, document.getElementById('root')
+);
 
 
 rerenderEntureTree(store.getState());
-store.subscribe(() => {
-	let state = store.getState(); //отдаем state в ререндер
-	rerenderEntureTree(state);
-}); //отправляем функцию для её вызова коллбек
